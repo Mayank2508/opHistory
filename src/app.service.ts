@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { getDescription } from './helpers';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getHtml():string
+  {
+    return getDescription();
   }
 }

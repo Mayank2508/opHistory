@@ -1,11 +1,18 @@
 import * as mongoose from 'mongoose';
+
+export const op = new mongoose.Schema({
+    question: {type: String, required:true},
+    ans: {type: String, required:true}
+    
+});
+
 export const OperationSchema = new mongoose.Schema({
-    operationName:{type:String, required:true},
+    operation: {type:op, required:true},
     
 }, {timestamps: true});
 
 
 export interface Operation extends mongoose.Document{
-         id:string;
-         operationName: string;
+    id:string;
+    operation: object;
 }
