@@ -23,13 +23,15 @@ export class OperationsServices{
         </head>
         <body>
           <h1>History</h1>
-          <table>
+          <table class="beautiful-table">
           <tr>
+            <th> Index </th>
             <th> Question </th>
             <th> Answer </th>
           </tr>
-            ${parsedRes.map(item => `
+            ${parsedRes.map((item, index )=> `
             <tr>
+            <td>${index+1}</td>
             <td> Question: ${item.question}</td> 
             <td> Answer: ${item.ans}</td>
             </tr>`
@@ -37,6 +39,44 @@ export class OperationsServices{
           <table>
         </body>
       </html>
+      <style>
+      /* Reset default margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      /* Apply some general styling to the table */
+      table.beautiful-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+      }
+    
+      /* Style for table header cells */
+      table.beautiful-table th {
+        background-color: #f2f2f2;
+        color: #333;
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+    
+      /* Style for table data cells */
+      table.beautiful-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+    
+      /* Alternating row colors */
+      table.beautiful-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
     `;
     return htmlResponse;
     }
