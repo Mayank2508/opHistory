@@ -32,7 +32,7 @@ export class OperationsServices{
         .replaceAll('into','*')
         .replaceAll('by','/')
         .replaceAll('minus','-');
-        const res = {question:sequence, ans:eval(sequence)};
+        const res = {question: sequence, ans: eval(sequence)};
         await this.insertOperation(res);
         return res;
     }

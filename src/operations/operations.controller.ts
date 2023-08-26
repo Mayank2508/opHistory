@@ -12,7 +12,7 @@ export class OperationController{
         return await this.operationService.getLastTwenty();
     }
     @Get(':sequence(*)')
-    async calculate(@Param('sequence') sequence: string): Promise<any> 
+    async calculate(@Param('sequence') sequence: string): Promise<object> 
     {
         return await this.operationService.calculate(sequence);
     }
