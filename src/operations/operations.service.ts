@@ -11,7 +11,7 @@ export class OperationsServices{
 
     async getLastTwenty() 
     {
-      const res = await this.OperationModel.find()
+      const res = await this.OperationModel.find({}, { operation:true })
         .sort({ createdAt: -1 })
         .limit(20)
         .exec();
