@@ -1,5 +1,6 @@
 export function mapHistory(res):string
-{
+{ 
+  res = res.map(op => op.operation);
   return `<!DOCTYPE html>
       <html>
         <head>
@@ -13,11 +14,11 @@ export function mapHistory(res):string
               <th> Question </th>
               <th> Answer </th>
             </tr>
-              ${res.map((operation, index )=> `
+              ${res.map((op, index )=> `
             <tr>
               <td>${index+1}</td>
-              <td> Question: ${operation.question}</td> 
-              <td> Answer: ${operation.ans}</td>
+              <td> Question: ${op.question}</td> 
+              <td> Answer: ${op.ans}</td>
             </tr>`
               ).join('')}
           <table>
